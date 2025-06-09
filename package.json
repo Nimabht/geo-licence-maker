@@ -1,0 +1,20 @@
+{
+  "name": "licence-maker",
+  "version": "1.0.0",
+  "description": "License generator for Geo application",
+  "main": "dist/licence-maker.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/licence-maker.js",
+    "dev": "ts-node src/licence-maker.ts"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

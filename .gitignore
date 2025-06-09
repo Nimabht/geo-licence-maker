@@ -1,0 +1,5 @@
+dist
+public_key.pem
+private_key.pem
+license*.json
+node_modules

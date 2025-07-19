@@ -28,9 +28,13 @@ function generateLicense(
   sign.update(licenseData);
   const signature = sign.sign(privateKey, "hex");
 
+  // Generate a random 129 character string
+  const randomString = crypto.randomBytes(65).toString("hex"); // 65 bytes = 130 hex chars, but we need 129
+  const random129Chars = randomString.substring(0, 129);
+
   const licenseWithSignature = {
     ...license,
-    signature,
+    signature: `${random129Chars}${signature}`,
   };
 
   return JSON.stringify(licenseWithSignature);
@@ -40,10 +44,21 @@ function saveLicenseToFile(license: string, filename: string) {
   fs.writeFileSync(filename, license);
 }
 
-const customerId = "oil";
-const modules = ["module1", "module2"];
+const customerId = "dev";
+const modules = [
+  "auth",
+  "admin",
+  "personal-space",
+  "gps",
+  "stations",
+  "subscription",
+  "ticket",
+  "user",
+  "ppk",
+  "spp",
+];
 const startDate = "2025-06-01";
-const endDate = "2025-12-31";
+const endDate = "2025-09-31";
 
 const license = generateLicense(customerId, modules, startDate, endDate);
 saveLicenseToFile(license, `license_${customerId}.json`);

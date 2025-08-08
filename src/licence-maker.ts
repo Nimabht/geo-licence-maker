@@ -37,16 +37,19 @@ function generateLicense(
     signature: `${random129Chars}${signature}`,
   };
 
-  return JSON.stringify(licenseWithSignature);
+  // Convert to base64 instead of JSON
+  const licenseJson = JSON.stringify(licenseWithSignature);
+  const base64License = Buffer.from(licenseJson, "utf8").toString("base64");
+
+  return base64License;
 }
 
 function saveLicenseToFile(license: string, filename: string) {
   fs.writeFileSync(filename, license);
 }
 
-const customerId = "dev";
+const customerId = "TARENJ";
 const modules = [
-  "auth",
   "admin",
   "personal-space",
   "gps",
@@ -56,9 +59,10 @@ const modules = [
   "user",
   "ppk",
   "spp",
+  "static",
 ];
-const startDate = "2025-06-01";
-const endDate = "2025-09-31";
+const startDate = "2025-07-30";
+const endDate = "2025-09-15";
 
 const license = generateLicense(customerId, modules, startDate, endDate);
-saveLicenseToFile(license, `license_${customerId}.json`);
+saveLicenseToFile(license, `license.lic`);

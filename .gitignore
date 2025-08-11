@@ -4,3 +4,4 @@ private_key.pem
 license*.json
 node_modules
 *.lic
+build

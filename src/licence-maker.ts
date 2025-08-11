@@ -61,8 +61,8 @@ const modules = [
   "spp",
   "static",
 ];
-const startDate = "2025-07-30";
-const endDate = "2025-09-15";
+const startDate = "2025-08-11";
+const endDate = "2025-09-11";
 
 const license = generateLicense(customerId, modules, startDate, endDate);
 saveLicenseToFile(license, `license.lic`);

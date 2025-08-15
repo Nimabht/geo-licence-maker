@@ -60,6 +60,7 @@ const modules = [
   "ppk",
   "spp",
   "static",
+  "calendar",
 ];
 const startDate = "2025-08-11";
 const endDate = "2025-09-11";

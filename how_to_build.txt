@@ -1,0 +1,1 @@
+python -m PyInstaller --noconsole --onefile --icon=nima.ico .\core-license_maker_gui.py

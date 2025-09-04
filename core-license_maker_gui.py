@@ -28,7 +28,9 @@ AVAILABLE_MODULES = [
     "ppk",
     "spp",
     "static",
-    "calendar"
+    "calendar",
+    "ion",
+    "ppp"
 ]
 
 texts = {
@@ -369,7 +371,7 @@ modules_frame.pack(pady=5, padx=20, fill="x")
 
 # Create checkboxes for modules
 module_vars = {}
-default_modules = ["auth","admin", "personal-space", "gps", "stations", "subscription", "ticket", "user", "ppk", "spp", "static","calendar"]
+default_modules = ["auth","admin", "personal-space", "gps", "stations", "subscription", "ticket", "user", "ppk", "spp", "static","calendar","ion","ppp"]
 
 for i, module in enumerate(AVAILABLE_MODULES):
     var = ctk.BooleanVar(value=module in default_modules)
